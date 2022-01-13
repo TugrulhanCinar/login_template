@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 import 'package:login_template/core/consts/app/page_state.dart';
 import 'package:login_template/product/view_models/user_viewmodel.dart';
 import 'package:login_template/product/views/scenes/home_page/home_page.dart';

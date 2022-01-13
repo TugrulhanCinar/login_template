@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_template/core/consts/navigation/navigation_constants.dart';
-import 'package:login_template/product/views/scenes/login/login_page.dart';
 import 'package:login_template/product/views/scenes/main_pages/main_page.dart';
 import 'package:login_template/product/views/scenes/main_pages/notfound_page.dart';
 
