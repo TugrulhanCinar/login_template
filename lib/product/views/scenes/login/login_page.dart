@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_template/product/models/data_models/user_model.dart';
-import 'package:login_template/product/views/widgets/custom_widgets/custom_text.dart';
+import 'package:login_template/product/views/widgets/custom_widgets/custom_button.dart';
 import 'package:login_template/product/views/widgets/custom_widgets/custom_textformfield.dart';
 import 'package:login_template/core/extensions/context_extension.dart';
 
@@ -12,24 +11,32 @@ class LoginPageScene extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Form(child: formBody(context)),
+      //appBar: AppBar(),
+      body: Center(
+        child: Form(
+          child: formBody(context),
+        ),
+      ),
     );
   }
 
   Widget formBody(BuildContext context) => Container(
         padding: context.paddingNormal,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             getMailTextField,
+            context.emptyNormalWidget,
             getPasswordTextField,
-            MaterialButton(
-              color: Colors.green,
-              child: CustomText("txt"),
-              onPressed: () {},
-            )
+            context.emptyNormalWidget,
+            button(context),
           ],
         ),
+      );
+
+  Widget button(BuildContext context) => Container(
+        width: context.width,
+        child: CustomButton(txt: "Giriş yap", color: Colors.red, onPressed: login),
       );
 
   Widget get getMailTextField => CustomTextFormField(
@@ -45,4 +52,8 @@ class LoginPageScene extends StatelessWidget {
   mailTextFormFieldSave(String? txt) => email = txt;
 
   passwordTextFormFieldSave(String txt) => password = txt;
+
+  void login() {
+    // TODO: add login buisiness
+  }
 }

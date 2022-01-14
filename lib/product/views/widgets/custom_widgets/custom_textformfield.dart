@@ -24,12 +24,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   @override
-  Widget build(BuildContext context) => textFormField;
+  Widget build(BuildContext context) => textFormField(context);
 
-  Widget get textFormField => TextFormField(
+  Widget textFormField(BuildContext context) => TextFormField(
         obscureText: obscureText,
         decoration: InputDecoration(
+          labelText: widget.hintText,
+          labelStyle: Theme.of(context).textTheme.overline?.copyWith(color: Colors.red),
           suffix: widget.obscureText ? textFormFieldSuffixIcon : null,
+          border: outlineInputBorder,
+          enabledBorder: outlineInputBorder,
+          focusedBorder: outlineInputBorder,
         ),
       );
 
@@ -46,10 +51,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       );
 
   OutlineInputBorder get outlineInputBorder => OutlineInputBorder(
-        borderRadius: context.containerBorderRadiusVeryLow,
+        // borderRadius: context.containerBorderRadiusVeryLow,
         borderSide: BorderSide(
-          width: 0,
-          color: Colors.blue.withOpacity(0.1),
+          width: 0.3,
+          color: Colors.red,
         ),
       );
 }
